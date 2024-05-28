@@ -1,12 +1,12 @@
-SVI Inter-VLAN-routing When you want to establish communication between different VLANs you will need a device that can do routing. You could use an external router with separate physical gateways or a sub-interface (router on stick) method but it’s also possible to use a multilayer switch. 
+Enrutamiento entre VLAN SVI Cuando desee establecer comunicación entre diferentes VLAN, necesitará un dispositivo que pueda realizar enrutamiento. Puede utilizar un enrutador externo con puertas de enlace físicas independientes o un método de subinterfaz (enrutador en dispositivo), pero también es posible utilizar un conmutador multicapa. 
 
-Ether-channel or (link aggregation). Ether-channel is a technology that allows us to bundle multiple physical links into a single logical link. Ether-channel is used to aggregate bandwidth between multiple layer 2 / layer 3 interfaces.
+**Ether-channel or (link aggregation).** Ether-channel es una tecnología que nos permite agrupar múltiples enlaces físicos en un único enlace lógico. El Ether-channel se utiliza para agregar ancho de banda entre múltiples interfaces de capa 2/capa 3.
 
-Spanning-tree BPDU Guard is one of the features that help you protect your spanning-tree topology. 
+**Spanning-tree BPDU Guard** es una de las funciones que le ayudan a proteger su topología de árbol de expansión. 
 
-BPDU Guard prevents loops if another switch is attached to a Port-fast port. 
+**BPDU Guard** evita bucles si se conecta otro conmutador a un puerto de puerto rápido. 
 
-The root guard prevents the wrong switch from becoming the spanning tree root. If a root guard port receives a superior BPDU that might cause it to become a root port, the port is put into “root-inconsistent”
+**The root guard** evita que el interruptor incorrecto se convierta en STP. Si un puerto de root guard recibe una BPDU superior que podría hacer que se convierta en un root port, el puerto se pone en estado "root-inconsistent".
 
 ![](img/topologia.png)
 

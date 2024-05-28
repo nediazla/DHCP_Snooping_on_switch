@@ -8,7 +8,7 @@ BPDU Guard prevents loops if another switch is attached to a Port-fast port. 
 
 The root guard prevents the wrong switch from becoming the spanning tree root. If a root guard port receives a superior BPDU that might cause it to become a root port, the port is put into “root-inconsistent”
 
-![[Pasted image 20240527080910.png]]
+![](img/topologia.png)
 
 ```js
 SW-1(config)#interface range fastEthernet 0/5-8

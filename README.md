@@ -294,10 +294,10 @@ SVI(config-if)#exit
 ```
 
 ```js
-Router(config)#interface g0/0/1
-Router(config-if)#ip address 1.1.1.1 255.0.0.0
-Router(config-if)#no sh
-Router(config-if)#
+R-1(config)#interface g0/0/1
+R-1(config-if)#ip address 1.1.1.1 255.0.0.0
+R-1(config-if)#no sh
+R-1(config-if)#
 
 %LINK-5-CHANGED: Interface GigabitEthernet0/0/1, changed state to up
 
@@ -307,10 +307,10 @@ Router(config-if)#exit
 ```
 
 ```js
-Router(config)#interface g0/0/1
-Router(config-if)#ip address 192.168.1.1 255.255.255.0
-Router(config-if)#no sh
-Router(config-if)#
+R-1(config)#interface g0/0/1
+R-1(config-if)#ip address 192.168.1.1 255.255.255.0
+R-1(config-if)#no sh
+R-1(config-if)#
 
 %LINK-5-CHANGED: Interface GigabitEthernet0/0/1, changed state to up 
 
@@ -348,3 +348,45 @@ R-2(config)#ip dhcp relay information trust-all
 R-2(config)#exit
 ```
 
+```js
+R-1(config)#interface gigabitEthernet 0/0/0
+R-1(config-if)#ip address 2.2.2.1 255.0.0.0
+R-1(config-if)#no sh
+
+R-1(config-if)#
+
+%LINK-5-CHANGED: Interface GigabitEthernet0/0/0, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/0/0, changed state to up
+
+Router(config-if)#
+```
+
+```js
+R-2(config)#router eigrp 1
+R-2(config-router)#network 192.168.1.0
+R-2(config-router)#network 2.0.0.0
+R-2(config-router)#no auto-summary
+R-2(config-router)#exit
+```
+
+```js
+R-1(config)#router eigrp 1
+R-1(config-router)#network 2.0.0.0
+R-1(config-router)#
+
+%DUAL-5-NBRCHANGE: IP-EIGRP 1: Neighbor 2.2.2.2 (GigabitEthernet0/0/0) is up: new adjacency
+
+R-1(config-router)#network 1.0.0.0
+R-1(config-router)#no auto-summary
+R-1(config-router)#exit
+```
+
+```js
+SVI(config)#router eigrp 1
+SVI(config-router)#network 1.0.0.0
+SVI(config-router)#network 10.0.0.0
+SVI(config-router)#network 20.0.0.0
+SVI(config-router)#no auto-summary
+SVI(config-router)#exit
+```

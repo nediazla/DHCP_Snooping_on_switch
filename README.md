@@ -1,3 +1,5 @@
+[![GitHub sponsors](https://undergroundwires.dev/img/badges/donate/flat.svg)](https://www.buymeacoffee.com/nediazla3)
+
 Enrutamiento entre VLAN SVI Cuando desee establecer comunicación entre diferentes VLAN, necesitará un dispositivo que pueda realizar enrutamiento. Puede utilizar un enrutador externo con puertas de enlace físicas independientes o un método de subinterfaz (enrutador en dispositivo), pero también es posible utilizar un conmutador multicapa. 
 
 **Ether-channel or (link aggregation).** Ether-channel es una tecnología que nos permite agrupar múltiples enlaces físicos en un único enlace lógico. El Ether-channel se utiliza para agregar ancho de banda entre múltiples interfaces de capa 2/capa 3.
